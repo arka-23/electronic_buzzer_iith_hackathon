@@ -79,6 +79,9 @@ Q3 = (C’+QC+A+B)’ [1]
 ## Schematic
 <p align="center">
 <img src="Images/HV_Tolerant_LS_Schematic.png"></br>
+
+
+
   Fig. 5: 
 </p>
 
