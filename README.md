@@ -1,1 +1,1 @@
-# Electronic_Buzzer_iith_hackathon
+# Design and Implementation of Combinational Logic Based Electronic Buzzer Circuit using CMOS
