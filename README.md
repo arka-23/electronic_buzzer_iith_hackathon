@@ -1,1 +1,1 @@
-# electronic_buzzer_iith_hackathon
+# Electronic_Buzzer_iith_hackathon
