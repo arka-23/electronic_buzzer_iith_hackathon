@@ -88,18 +88,42 @@ Q3 = (C’+QC+A+B)’ [1]
   Figs. 5(i), (ii), (iii), (iv), (v), (vi): Final simulated circuit.
 </p>
 Note: To make the circuit symbols more understandable, the magnified images of the symbols(along with their internal designs) have been provided alongside the actual design.
+
+
 ## Symbol
-<p align="center">
+
+![image](https://user-images.githubusercontent.com/70422874/155395211-46a552b1-bb5b-46b6-8c6b-2f2644efc1c9.png)
+
+   Fig. 6(i): NOR_2 symbol   
+
+
 ![image](https://user-images.githubusercontent.com/70422874/155393369-71c9335b-19d2-4000-ae9c-e6aefe08ab2a.png)
-   Fig. 6(ii): NOR_4 internal design
+
+   Fig. 6(ii): NOR_2 schematic
+   
+   
+ ![image](https://user-images.githubusercontent.com/70422874/155395532-ce04e960-efd8-4d69-885d-67d11b43cca7.png)
+
+    Fig. 7(i): NOT_2 symbol  
+   
 ![image](https://user-images.githubusercontent.com/70422874/155393400-51ab7b79-6a65-4160-892d-a8d0ca3e5332.png)
-    Fig. 7(ii): NOT_2 internal design
+
+    Fig. 7(ii): NOT_2 schematic
+        
+![image](https://user-images.githubusercontent.com/70422874/155396013-98aaf6d4-464b-4163-82ce-7be0ba5ab453.png)
+
+ Fig. 8(i): NOR_4 symbol
+    
+![image](https://user-images.githubusercontent.com/70422874/155395881-4531da61-646d-4454-8788-574b423e16e3.png)
+    
+Fig. 8(ii): NOR_4 schematic
+    
+    
   </p>
 Note: To make the CMOS Level circuit more compatible and Industry ready a Symbol reference has been created. So, it makes easy whenever a testbench of different Parameters needs to be tested.
 
 ## Parameters set for Pulse Voltage Source for VIN
-<p align="center">
-<img src="Images/VIN PARAMETERS.png"></br>
+
   Fig. 5: Pulse Voltage Source Input VIN set at 1.05V 
 </p>
 
@@ -130,53 +154,79 @@ Note: To make the CMOS Level circuit more compatible and Industry ready a Symbol
 ## Netlist
 ```
 *  Generated for: PrimeSim
-*  Design library name: sm_hvt_levelshifter
-*  Design cell name: hvt_levelshifter_tb
+*  Design library name: my_design
+*  Design cell name: design
 *  Design view name: schematic
 .lib 'saed32nm.lib' TT
 
 *Custom Compiler Version S-2021.09
-*Wed Feb 23 02:17:30 2022
+*Wed Feb 23 19:46:53 2022
 
 .global gnd!
 ********************************************************************************
-* Library          : sm_hvt_levelshifter
-* Cell             : hvt_levelshifter
+* Library          : my_design
+* Cell             : NOR_2
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-.subckt hvt_levelshifter gnd_1 out vddh vddl vin
-xm8 net85 net94 gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
-xm7 net83 vin gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
-xm6 net43 net44 net85 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
-xm5 net39 net44 net83 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
-xm4 out net103 net19 net44 n105 w=0.1u l=0.03u nf=1 m=1
-xm3 net19 net51 net44 net44 n105 w=0.1u l=0.03u nf=1 m=1
-xm2 net9 out net44 net44 n105 w=0.1u l=0.03u nf=1 m=1
-xm1 net51 net63 net9 net44 n105 w=0.1u l=0.03u nf=1 m=1
-xm0 net94 vin gnd_1 gnd_1 n105 w=0.1u l=0.03u nf=1 m=1
-xm15 net63 net103 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
-xm14 net103 net63 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
-xm13 out net103 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
-xm12 net51 net63 vddh vddh p105 w=0.1u l=0.03u nf=1 m=1
-xm11 net94 vin vddl vddl p105 w=0.1u l=0.03u nf=1 m=1
-xm10 net43 net44 net63 vddh p105 w=0.1u l=0.03u nf=1 m=1
-xm9 net39 net44 net103 vddh p105 w=0.1u l=0.03u nf=1 m=1
-vbias net44 gnd! dc=0.6
-.ends hvt_levelshifter
+.subckt nor_2 net2 net9 net12 net16 net27
+xm5 net31 net27 net9 net31 p105 w=0.654u l=0.03u nf=1 m=1
+xm0 net31 net12 net2 net2 p105 w=0.654u l=0.03u nf=1 m=1
+xm4 net16 net27 net9 net16 n105 w=0.518u l=0.03u nf=1 m=1
+xm2 net9 net12 net16 net16 n105 w=0.518u l=0.03u nf=1 m=1
+.ends nor_2
 
 ********************************************************************************
-* Library          : sm_hvt_levelshifter
-* Cell             : hvt_levelshifter_tb
+* Library          : my_design
+* Cell             : NOR_4_1
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xi0 gnd! out net8 net6 net10 hvt_levelshifter
-v6 net8 gnd! dc=3.3
-v5 net6 gnd! dc=1.05
-v9 net10 gnd! dc=1.05 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
+.subckt nor_4_1 net4 net5 net14 net15 net18 net21 net22
+xi4 net18 net21 net48 net22 net53 nor_2
+xi3 net18 net53 net51 net22 net51 nor_2
+xi2 net18 net51 net14 net22 net15 nor_2
+xi1 net18 net48 net50 net22 net50 nor_2
+xi0 net18 net50 net4 net22 net5 nor_2
+.ends nor_4_1
+
+********************************************************************************
+* Library          : my_design
+* Cell             : NOT_2
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt not_2 net9 net12 net13 net14
+xm1 net9 net14 net13 net9 n105 w=0.518u l=0.03u nf=1 m=1
+xm2 net13 net14 net12 net12 p105 w=1.06u l=0.03u nf=1 m=1
+.ends not_2
+
+********************************************************************************
+* Library          : my_design
+* Cell             : design
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi4 net70 net50 net84 net71 net81 net25 gnd! nor_4_1
+xi3 net46 net84 net25 net24 net81 net50 gnd! nor_4_1
+xi0 net42 net50 net8 net25 net81 net84 gnd! nor_4_1
+xi5 net81 net71 net25 gnd! net74 nor_2
+xi2 net81 net24 net50 gnd! net49 nor_2
+xi1 net81 net8 net84 gnd! net85 nor_2
+xi9 gnd! net81 net70 net74 not_2
+xi7 gnd! net81 net42 net85 not_2
+xi8 gnd! net81 net46 net49 not_2
+v10 net81 gnd! dc=1.2
+c15 net84 gnd! c=1p
+c14 net25 gnd! c=1p
+c13 net50 gnd! c=1p
+v23 net49 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b001001110010 )
+v22 net85 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b011100100010 )
+v24 net74 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b000100100111 )
 
 
 
@@ -185,11 +235,11 @@ v9 net10 gnd! dc=1.05 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
 
 
 
-.tran '1u' '30u' name=tran
+.tran '1u' '100u' name=tran
 
 .option primesim_remove_probe_prefix = 0
 .probe v(*) i(*) level=1
-.probe tran v(out) v(net10)
+.probe tran v(net25) v(net49) v(net50) v(net74) v(net84) v(net85)
 
 .temp 25
 
@@ -209,13 +259,11 @@ v9 net10 gnd! dc=1.05 pulse ( 0 1.05 0 0.1u 0.1u 5u 10u )
 
 ```
 ## Waveform
-<p align="center">
-<img src="Images/HV_Tolerant_LS_Waveforms.png"></br>
-  Fig. 10: High Voltage level shift for 1.05V VIN to 3.3V VDDH Supply 
-</p>
-<p align="center">
-<img src="Images/PrimeSim Waveforms for HVTLS.png"></br>
-  Fig. 11: Simulation waveforms evident for Level Shift Tolerating High Voltage 
+![image](https://user-images.githubusercontent.com/70422874/155396831-0b9b3acf-57ae-49d3-a4c5-2b237eda43e1.png)
+
+  Fig. : Required Simulation Waveforms 
+  
+  Note: The 1st 3 waveforms are the inputs A, B, and C, while the last 3 are the outputs Q1, Q2, and Q3, which is same as depicted in above hand-drawn wavform.
 </p>
 
 ## Conclusion
@@ -226,8 +274,13 @@ Thus, A HV-tolerant level shifter that shifts both digital levels from VDDH and 
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
 ## References
-[1] Marcelino B. dos Santos, Member, IEEE “Level Shifters and DCVSL for a Low-Voltage CMOS 4.2-V Buck Converter”- 2008
-[2] Yang Yintang “A high performance 90 nm CMOS SAR ADC with hybrid architecture.”- 2010
+[1] Balraj Singh, Mukesh Kumar, and J. S. Ubhi, “Analysis of CMOS based
+NAND and NOR Gates at 45mm Technology”, IJEECS, ISSN 2348-
+117X, Volume 6, Issue 4, April 2017.
+[2] Sudhakar Alluri1, Uma Umaheshwar, B. Rajendra Naik and
+N.S.S.Reddy, “Design and Performance Analysis of VLSI Circuits in
+180nm Technology”, IJCRT, ISSN: 2320-2882, Volume 6, Issue 2 April
+2018
 
 
 
