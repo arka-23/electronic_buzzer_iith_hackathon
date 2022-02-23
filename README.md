@@ -32,7 +32,7 @@ input becomes high from an initial low state and remains stable
 at that state, unaffected by any change in input signals from the
 other two input points. The output returns to its initial low state
 only when the first input signal is removed. The circuit is purely
-combinational as the outputs are independent of any clock signal. [1]
+combinational as the outputs are independent of any clock signal. 
 
 ## Reference Circuit Details
 
@@ -55,7 +55,7 @@ as A, B and C with outputs as Q1, Q2 and Q3 corresponding
 to the respective inputs.
 Q1 = (A’+QA+B+C)’,
 Q2 = (B’+QB+A+C)’,
-Q3 = (C’+QC+A+B)’ [1]
+Q3 = (C’+QC+A+B)’ 
 
 ## Reference Circuit Diagram
 <p align="center">
@@ -263,7 +263,7 @@ v24 net74 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b000100100111 )
 
   Fig. : Required Simulation Waveforms 
   
-  Note: The 1st 3 waveforms are the inputs A, B, and C, while the last 3 are the outputs Q1, Q2, and Q3, which is same as depicted in above hand-drawn wavform.
+  Note: The 1st 3 waveforms are the inputs A, B, and C respectively, while the last 3 are the outputs Q1, Q2, and Q3 respectively, which is same as depicted in above hand-drawn wavform.
 </p>
 
 ## Conclusion
