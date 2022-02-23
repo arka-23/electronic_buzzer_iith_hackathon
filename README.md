@@ -61,7 +61,7 @@ Q3 = (C’+QC+A+B)’ [1]
 ![Schematic_2](https://user-images.githubusercontent.com/70422874/155384856-cc6f2149-b0a0-4768-bd60-25a42f192a95.jpg)
 
 <p align="center">
-<img src="Images/Reference Circuit diagram.jpeg"></br>
+<img src="waveform2_2.jpeg"></br>
   Fig. 1: HV Tolerant Level shifter Reference circuit Diagram 
 </p>
 
