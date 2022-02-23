@@ -66,26 +66,26 @@ Q3 = (C’+QC+A+B)’ [1]
   Fig. 2:  CMOS 2 input NOT Gate
  <p align="center">
  <img src="Nor gate_2.jpg"></br>
-  Fig. 2:  CMOS 2 input NOR Gate
+  Fig. 3:  CMOS 4 input NOR Gate
 </p>
 
-## Reference Circuit Waveform
+## Reference Circuit Waveforms
 <p align="center">
-<img src="Images/Reference Circuit waveforms.jpeg"></br>
-  Fig. 2: HV Tolerant Level shifter Reference Waveforms Diagram 
+<img src="Waveform-2_2 (1).jpg"></br>
+  Fig. 4:  Waveforms
 </p>
 
 # Simulation in Synopsys
 ## Schematic
 <p align="center">
 <img src="Images/HV_Tolerant_LS_Schematic.png"></br>
-  Fig. 3: HV Tolerant Level shifter Schematic 
+  Fig. 5: 
 </p>
 
 ## Symbol
 <p align="center">
 <img src="Images/HV_Tolerant_LS_Symbol.png"></br>
-  Fig. 4: HV Tolerant Level shifter using Symbol reference 
+  Fig. 6: HV Tolerant Level shifter using Symbol reference 
 </p>
 Note: To make the CMOS Level circuit more compatible and Industry ready a Symbol reference has been created. So, it makes easy whenever a testbench of different Parameters needs to be tested.
 
