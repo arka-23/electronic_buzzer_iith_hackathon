@@ -9,7 +9,7 @@ This repository contains the design for a CMOS digital combinational logic based
   * [Reference Circuit Waveforms](#reference-circuit-waveforms)
 - [Simulation in Synopsys](#simulation-in-synopsys)
   * [Schematic](#schematic)
-  * [Symbol](#symbol)
+  * [Symbols](#symbols)
   * [Parameters set for Voltage Source for inputs](#parameters-set-for-voltage-source-for-inputs)
   * [Parameters set for DC Voltage Source for VDD](#parameters-set-for-dc-voltage-source-for-vdd)  
   * [Transient Settings](#transient-settings)
@@ -91,7 +91,7 @@ Q3 = (C’+QC+A+B)’
 Note: To make the circuit symbols more understandable, the magnified images of the symbols(along with their internal designs) have been provided alongside the actual design.
 
 
-## Symbol
+## Symbols
 ![image](https://user-images.githubusercontent.com/70422874/155395211-46a552b1-bb5b-46b6-8c6b-2f2644efc1c9.png)
 
    Fig. 6(i): NOR_2 symbol   
