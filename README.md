@@ -1,5 +1,5 @@
 # Design and Implementation of Combinational Logic Based Electronic Buzzer Circuit using CMOS
-This repository contains the design for a CMOS digital combinational logic based electronic buzzer circuit that selects the output basedon  the relative time of application of input, implemented using Synopsys Custom Compiler on 28nm CMOS technology
+This repository contains the design for a CMOS digital combinational logic based electronic buzzer circuit with 3 inputs that selects the output based on the relative time of application of input, implemented using Synopsys Custom Compiler on 28nm CMOS technology
 
 
 # Table of Contents
@@ -42,8 +42,8 @@ properties of ’D-type Latch’, also called transparent latch,
 without using the enable. The latch circuit composed of NOR
 gates and NOT gates, is slightly modified to meet the design
 requirements.
-Fig. 3 represents the digital combinational logic design of
-the circuit using NOR and NOT gates. Fig. 1 and Fig. 2
+Fig. 1 represents the digital combinational logic design of
+the circuit using NOR and NOT gates. Fig. 2 and Fig. 3
 represent the NOR and NOT gates using CMOS circuit which
 is comprised of two parts - the pull-up lattice composed of
 PMOS circuit and the pull-down lattice composed of NMOS
@@ -61,17 +61,19 @@ Q3 = (C’+QC+A+B)’
 <img src="Schematic_2.jpg"></br>
   Fig. 1:  Reference Combinational logic circuit design.
  <p align="center">
- <img src="NOT gate_2.jpg"></br>
-  Fig. 2:  CMOS 2 input NOT Gate
+ <img src="Nor gate_2.jpg"></br> 
+  Fig. 2:  CMOS 4 input NOR Gate
+  
  <p align="center">
- <img src="Nor gate_2.jpg"></br>
-  Fig. 3:  CMOS 4 input NOR Gate
+ <img src="NOT gate_2.jpg"></br>
+  Fig. 3:  CMOS 2 input NOT Gate  
 </p>
 
 ## Reference Circuit Waveforms
+
+![output waveforms_2](https://user-images.githubusercontent.com/70422874/155539930-9416088b-816f-45db-a764-508826d3d41f.jpg)
 <p align="center">
-<img src="Waveform-2_2 (1).jpg"></br>
-  Fig. 4:  Waveforms
+  Fig. 4: Expected Waveforms
 </p>
 
 # Simulation in Synopsys
@@ -83,14 +85,13 @@ Q3 = (C’+QC+A+B)’
 ![image](https://user-images.githubusercontent.com/70422874/155391987-0478fb2c-e091-466d-abb0-db9cc0abdf14.png)
 ![image](https://user-images.githubusercontent.com/70422874/155392010-a5aee987-be9b-4e9a-8958-be236835d81d.png)
 
-
-  Figs. 5(i), (ii), (iii), (iv), (v), (vi): Final simulated circuit.
+<p align="center">
+  Fig. 5(i), (ii), (iii), (iv), (v), (vi): Final simulated circuit.
 </p>
 Note: To make the circuit symbols more understandable, the magnified images of the symbols(along with their internal designs) have been provided alongside the actual design.
 
 
 ## Symbol
-  
 ![image](https://user-images.githubusercontent.com/70422874/155395211-46a552b1-bb5b-46b6-8c6b-2f2644efc1c9.png)
 
    Fig. 6(i): NOR_2 symbol   
@@ -265,14 +266,16 @@ v24 net74 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b000100100111 )
 
   Fig. 12: Required Simulation Waveforms 
   
-  Note: The 1st 3 waveforms are the inputs A, B, and C respectively, while the last 3 are the outputs Q1, Q2, and Q3 respectively, which is same as depicted in above hand-drawn wavform.
+  Note: The 1st 3 waveforms are the inputs A, B, and C respectively, while the last 3 are the outputs Q1, Q2, and Q3 respectively, which is same as depicted in above expected waveform representation.
 </p>
 
 ## Explanation for Observed Waveforms
+![output waveforms_2](https://user-images.githubusercontent.com/70422874/155540594-344ba5d0-19c4-427b-bd31-658dee3f7072.jpg)
 
+In time interval T1, input A goes high first. The output follows this input only, while any change in voltage of the other two inputs has NO effect on the output, in this time interval, ie. until input A remains high. Similar changes take place in time intervals T2 and T3.
 
 ## Conclusion
-Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit that selects the output based on  the relative time of application of input, has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology
+Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit with 3 inputs that selects the output based on  the relative time of application of input(which is assumed here as input going from low to high voltage levels), has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology. As per design requirements, similar logic can be applied  for a greater number the number of inputs.
 
 
 ## Acknowledgement
