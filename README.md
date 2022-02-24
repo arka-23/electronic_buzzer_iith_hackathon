@@ -276,7 +276,7 @@ In time interval T1, input A goes high first. The output follows this input only
 
 ## Conclusion
 Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit with 3 inputs that selects the output based on  the relative time of application of input(which is assumed here as input going from low to high voltage levels), has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology. As per design requirements, similar logic can be applied  for a greater number of inputs.
-
+The designed circuit is purely combinational, and hence independent of any clock signal.
 
 ## Acknowledgement
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
