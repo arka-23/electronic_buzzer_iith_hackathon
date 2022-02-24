@@ -6,19 +6,18 @@ This repository contains the design for a CMOS digital combinational logic based
    * [Abstract](#abstract)
   * [Reference Circuit Details](#reference-circuit-details)
   * [Reference Circuit Diagram](#reference-circuit-diagram)
-  * [Reference Circuit Waveform](#reference-circuit-waveform)
+  * [Reference Circuit Waveforms](#reference-circuit-waveforms)
 - [Simulation in Synopsys](#simulation-in-synopsys)
   * [Schematic](#schematic)
   * [Symbol](#symbol)
-  * [Parameters set for Pulse Voltage Source for VIN](#parameters-set-for-pulse-voltage-source-for-vin)
-  * [Parameters set for DC Voltage Source for VDDL](#parameters-set-for-dc-voltage-source-for-vddl)
-  * [Parameters set for DC Voltage Source for VDDH](#parameters-set-for-dc-voltage-source-for-vddh)
-  * [Parameters set for DC Voltage Source for Vbias](#parameters-set-for-dc-voltage-source-for-vbias)
+  * [Parameters set for Voltage Source for inputs](#parameters-set-for-voltage-source-for-inputs)
+  * [Parameters set for DC Voltage Source for VDD](#parameters-set-for-dc-voltage-source-for-vdd)  
   * [Transient Settings](#transient-settings)
   * [Netlist](#netlist)
-  * [Waveform](#waveform)
+  * [Output Waveforms](#output-waveforms)
+  * [Explanation for Observed Waveforms](#explanation-for-observed-waveforms)
   * [Conclusion](#conclusion)
-  * [Acknowledgement](#acknowlegement)
+  * [Acknowledgement](#acknowledgement)
   * [References](#references)
 
 
@@ -91,7 +90,7 @@ Note: To make the circuit symbols more understandable, the magnified images of t
 
 
 ## Symbol
-
+  
 ![image](https://user-images.githubusercontent.com/70422874/155395211-46a552b1-bb5b-46b6-8c6b-2f2644efc1c9.png)
 
    Fig. 6(i): NOR_2 symbol   
@@ -115,40 +114,43 @@ Note: To make the circuit symbols more understandable, the magnified images of t
  Fig. 8(i): NOR_4 symbol
     
 ![image](https://user-images.githubusercontent.com/70422874/155395881-4531da61-646d-4454-8788-574b423e16e3.png)
-    
+    <p align="center">
 Fig. 8(ii): NOR_4 schematic
     
     
   </p>
 Note: To make the CMOS Level circuit more compatible and Industry ready a Symbol reference has been created. So, it makes easy whenever a testbench of different Parameters needs to be tested.
 
-## Parameters set for Pulse Voltage Source for VIN
+## Parameters set for Voltage Source for inputs
+![image](https://user-images.githubusercontent.com/70422874/155529254-db5e778c-b6bd-4893-af09-7475bd618c08.png)
 
-  Fig. 5: Pulse Voltage Source Input VIN set at 1.05V 
-</p>
+ <p align="center">
+  Fig. 9(i): Voltage Source Input at A.
+  </p>
+  
+![image](https://user-images.githubusercontent.com/70422874/155529693-ed483e7a-fcf7-4794-b17a-9611bb446921.png)
 
-## Parameters set for DC Voltage Source for VDDL
 <p align="center">
-<img src="Images/VDDL PARAMETER SUPPLY.png"></br>
-  Fig. 6: Low VDD Supply set for the Inverter connection in the Circuit set at 1.05V 
+  Fig. 9(ii): Voltage Source Input at B.
+  </p>
+
+![image](https://user-images.githubusercontent.com/70422874/155529889-582dc467-1f8b-4902-99d1-e5e588a26865.png)
+<p align="center">
+Fig. 9(iii): Voltage Source Input at C.  
+
 </p>
 
-## Parameters set for DC Voltage Source for VDDH
+## Parameters set for DC Voltage Source for VDD
+![image](https://user-images.githubusercontent.com/70422874/155530830-8109a26c-d14d-4e33-a19b-5f666a7b59ce.png)
 <p align="center">
-<img src="Images/VDDH PARAMETER SUPPLY.png"></br>
-  Fig. 7: High Voltage Supply given at VDDH to check the Level Shift set at 3.3V 
+  Fig. 10: VDD Supply voltage
 </p>
 
-## Parameters set for DC Voltage Source for Vbias
-<p align="center">
-<img src="Images/Vbias PARAMETER SUPPLY.png"></br>
-  Fig. 8: The Voltage Limiter (V-limit) from the Circuit Vbias is set at 0.6V
-</p>
 
 ## Transient Settings
+![image](https://user-images.githubusercontent.com/70422874/155531098-e85de0da-2f43-40a4-bc41-49c69e29d961.png)
 <p align="center">
-<img src="Images/TRANSIENT ANALYSIS INPUTS.png"></br>
-  Fig. 9: The Transient Analysis inputs Run at 1us step with stop time 30us 
+  Fig. 11: The Transient Analysis Inputs run at 1us step with stop time 100us 
 </p>
 
 ## Netlist
@@ -258,21 +260,28 @@ v24 net74 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b000100100111 )
 .end
 
 ```
-## Waveform
+## Output Waveforms
 ![image](https://user-images.githubusercontent.com/70422874/155396831-0b9b3acf-57ae-49d3-a4c5-2b237eda43e1.png)
 
-  Fig. : Required Simulation Waveforms 
+  Fig. 12: Required Simulation Waveforms 
   
   Note: The 1st 3 waveforms are the inputs A, B, and C respectively, while the last 3 are the outputs Q1, Q2, and Q3 respectively, which is same as depicted in above hand-drawn wavform.
 </p>
 
+## Explanation for Observed Waveforms
+
+
 ## Conclusion
-Thus, A HV-tolerant level shifter that shifts both digital levels from VDDH and Vbias = VSS to Vbias = VDD and ground, respectively, can easily be derived from the one shown in Fig. 3 Schematic using a complementary circuit topology. Such complementary level shifter can be useful when designing the shootthrough control circuit presented in some integrated dc–dc converters. is verified using 28nm Technology node of Synopsys.
+Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit that selects the output based on  the relative time of application of input, has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology
+
 
 ## Acknowledgement
 1. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
 2. Chinmay panda, IIT Hyderabad
 3. Sameer Durgoji, NIT Karnataka
+4. Synopsys Team/Company
+5. https://www.iith.ac.in/events/2022/02/15/Cloud-Based-Analog-IC-Design-Hackathon/
+
 ## References
 [1] Balraj Singh, Mukesh Kumar, and J. S. Ubhi, “Analysis of CMOS based
 NAND and NOR Gates at 45mm Technology”, IJEECS, ISSN 2348-
