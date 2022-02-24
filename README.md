@@ -275,7 +275,7 @@ v24 net74 gnd! dc=0 pat ( 1.2 0 0 0.1u 0.1u 5u b000100100111 )
 In time interval T1, input A goes high first. The output follows this input only, while any change in voltage of the other two inputs has NO effect on the output, in this time interval, ie. until input A remains high. Similar changes take place in time intervals T2 and T3.
 
 ## Conclusion
-Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit with 3 inputs that selects the output based on  the relative time of application of input(which is assumed here as input going from low to high voltage levels), has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology. As per design requirements, similar logic can be applied  for a greater number the number of inputs.
+Thus, the observed output waveforms match perfectly with our hand drawn output waveforms, for the required set of inputs. Hence, our required design for CMOS digital combinational logic based electronic buzzer circuit with 3 inputs that selects the output based on  the relative time of application of input(which is assumed here as input going from low to high voltage levels), has been implemented and verified using Synopsys Custom Compiler on 28nm CMOS technology. As per design requirements, similar logic can be applied  for a greater number of inputs.
 
 
 ## Acknowledgement
